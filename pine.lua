@@ -63,16 +63,17 @@ local function chunk()
                 local direction = directions[facing]
                 table.insert(objects,ThreeDFrame:newObject("models/turtle", block.x, block.y, block.z, nil, direction))
             else
+                local cube = {}
                 if block.name == "minecraft:grass_block" then
                   -- creates a very simple grass block model
-                  local cube = models:cube({
+                  cube = models:cube({
                     color = colors.orange,
                     top = colors.lime,
                     bottom = colors.brown,
                   })
                 else
                   math.randomseed(tonumber(byteStr(block.name)))
-                  local cube = models:cube({
+                  cube = models:cube({
                     side2 = 2^math.floor(math.random(16)),
                     side = 2^math.floor(math.random(16)),
                     top = 2^math.floor(math.random(16)),

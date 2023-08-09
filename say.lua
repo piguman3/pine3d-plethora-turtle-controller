@@ -1,0 +1,1 @@
+os.setLabel(io.read())
